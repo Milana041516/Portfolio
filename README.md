@@ -1,10 +1,28 @@
-# Milana_Gabbassova_Portfolio
+# Milana Gabbassova - Portfolio  
 
-Welcome to my portfolio! This site showcases my work as a front-end developer specializing in sleek, responsive websites with interactive 3D elements. It highlights my expertise in web development and 3D design, featuring selected projects, skills, and contact information.
-
-Explore my journey through case studies, discover my skills in various tools and frameworks, and see how I integrate 3D design into web pages to elevate user experience.
+Welcome to my portfolio! This project showcases my work as a **Frontend Developer** specializing in **sleek, responsive websites with integrated 3D elements**. The portfolio is designed to be dynamic, engaging, and user-friendly, utilizing **GSAP animations, HTML, SASS, PHP, and MySQL**.
 
 ![Webpage](images/readme-banner.png)
+
+
+## 🚀 Features  
+✔ **Smooth GSAP Animations** – Interactive transitions and animations for an engaging user experience.  
+✔ **Fully Responsive Design** – Optimized for different screen sizes, ensuring accessibility across devices.  
+✔ **Custom Styling with SASS** – Modular SCSS styles for maintainability and scalability.  
+✔ **Backend with PHP & MySQL** – Dynamic content management using a database-driven approach.  
+✔ **Project Showcase** – Displays my frontend and 3D projects in a visually appealing format.  
+
+## 🛠 Technologies Used  
+- **Frontend:** HTML, SASS (SCSS), GSAP  
+- **Backend:** PHP, MySQL  
+
+## 📩 Contact Me  
+📧 **Email:** [milanagabbassova@gmail.com](mailto:milanagabbassova@gmail.com)  
+🌍 **Portfolio:** [Your Website Link](#)  
+💼 **LinkedIn:** [linkedin.com/MilanaGabbassova](linkedin.com/in/milana-gabbassova-148842345)  
+📁 **GitHub:** [github.com/MilanaGabbassova](https://github.com/Milana041516)  
+
+If you’d like to connect, collaborate, or discuss potential projects, feel free to reach out! 🚀
 
 ## Installation
 This is no installatin required, but should be opened with live server.
@@ -20,7 +38,8 @@ Open index.html in the browser of your choice.
 5. Submit a pull request :D
 
 ## History
-October 25, 2024
+* February 9, 2025
+* October 25, 2024
 
 ## Credits
 Milana Gabbassova
