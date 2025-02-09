@@ -29,29 +29,35 @@ if(empty($email)) {
     $errors['legit_email'] = 'You must provide a REAL email';
 }
 
-if(empty($errors)) {
-    $query = "INSERT INTO contact (fname, lname, email, message) VALUES('.$fname', '.$lname', '.$email', '.$msg')";
-
-    if(mysqli_query($connect, $query)) {
-        $to = 'm_gabbassova@fanshaweonline.ca';
-        $subject = 'Message from your Portfolio Website!';
-
-        $message = "You have received a new contact form submission:\n\n";
-        $message .= "Name: ".$fname." ".$lname."\n";
-        $message .= "Email ".$email."\n\n";
-        $message .= $msg;
-
-
-        mail($to,$subject,$message);
-        header('Location: thank_you.php');
-        } else {
-        echo "Database insertion failed!";
-        }
+if (empty($errors)) {
+    try {
+        $query = "INSERT INTO contact (fname, lname, email, message) VALUES (?,?,?,?)";
+        $stmt = $connect->prepare($query);
+        $stmt->bindParam(1, $fname, PDO::PARAM_STR);
+        $stmt->bindParam(2, $lname, PDO::PARAM_STR);
+        $stmt->bindParam(3, $email, PDO::PARAM_STR);
+        $stmt->bindParam(4, $msg, PDO::PARAM_STR);
         
+        if ($stmt->execute()) {
+            $to = 'm_gabbassova@fanshaweonline.ca';
+            $subject = 'Message from your Portfolio Website!';
+            $message = "You have received a new contact form submission:\n\n";
+            $message .= "Name: " . $fname . " " . $lname . "\n";
+            $message .= "Email: " . $email . "\n\n";
+            $message = $msg;
+            
+            mail($to, $subject, $message);
+            header('Location: thank_you.php');
+            exit();
         } else {
-            foreach ($errors as $error) {
-                echo $error . '<br>';
-            }
+            echo "Database insertion failed!";
         }
-
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    foreach ($errors as $error) {
+        echo $error . '<br>';
+    }
+}
 ?>

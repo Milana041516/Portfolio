@@ -6,6 +6,12 @@
     border: 1px solid white;
     padding: 25px 25px;
 
+    .project-card-image {
+        img {
+            border-radius: 20px;
+        }
+    }
+
 
     .project-card-tools {
         display: flex;

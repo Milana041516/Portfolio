@@ -31,7 +31,7 @@
                 <span class="bar"></span>
             </div>
 
-            <a href="index.html"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
+            <a href="index.php"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
             
 
                 <div class="nav-menu">
@@ -141,7 +141,7 @@
 
                 <div class="email">
                     <img src="images/mail-icon.svg" alt="mail-icon">
-                    <p class="purple-text-pe">&lt;milana15.10.05@gmail.com&gt;</p>
+                    <p class="purple-text-pe">&lt;milanagabbassova@gmail.com&gt;</p>
                 </div>
             </div>
 
