@@ -19,7 +19,7 @@ Welcome to my portfolio! This project showcases my work as a **Frontend Develope
 ## 📩 Contact Me  
 📧 **Email:** [milanagabbassova@gmail.com](mailto:milanagabbassova@gmail.com)  
 🌍 **Portfolio:** [Your Website Link](#)  
-💼 **LinkedIn:** [linkedin.com/MilanaGabbassova](linkedin.com/in/milana-gabbassova-148842345)  
+💼 **LinkedIn:** [linkedin.com/MilanaGabbassova](https://linkedin.com/in/milana-gabbassova-148842345)  
 📁 **GitHub:** [github.com/MilanaGabbassova](https://github.com/Milana041516)  
 
 If you’d like to connect, collaborate, or discuss potential projects, feel free to reach out! 🚀
