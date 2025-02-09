@@ -21,6 +21,9 @@ section {
 
 }
 
+.plyr {
+    border-radius: 20px;
+}
 
 :root {
     --plyr-audio-progress-buffered-background: #6933B3;
@@ -49,6 +52,7 @@ section {
         background: radial-gradient(45% 38% at 26% 57%, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.20) 80.39%);
         border: 1px solid white;
         padding: 15px;
+        border-radius: 20px;
     }
 
     .h-background-about {
@@ -72,6 +76,7 @@ section {
         background: radial-gradient(45% 38% at 26% 57%, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.20) 80.39%);
         border: 1px solid white;
         padding: 15px;
+        border-radius: 20px;
 
         img {
             width: 100%;

@@ -4,18 +4,29 @@
 <?php
 require_once('includes/connect.php');
 
-$query1 = 'SELECT * FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 2 AND projects.id ='.$_GET['id'];
-$result1 = mysqli_query($connect, $query1);
-$row1 = mysqli_fetch_assoc($result1);
-
+$query1 = 'SELECT * FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 2 AND projects.id = :projectid';
 $query2 = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview, categories_id FROM projects, media, categories WHERE media.projects_id = projects.id AND projects.categories_id = categories.id';
-$result2 = mysqli_query($connect, $query2);
+
+$stmt1 = $connect->prepare($query1);
+$stmt2 = $connect->prepare($query2);
+$projectid = $_GET['id'];
+
+
+$stmt1->bindParam(':projectid', $projectid, PDO::PARAM_INT);
+$stmt1->execute();
+$stmt2->execute();
+
+
+$row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
 
 $projects = [];
-while ($row2 = mysqli_fetch_assoc($result2)) {
+
+while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
     $projects[] = $row2; 
 }
 
+$stmt1 = null;
+$stmt2 = null;
 
 ?>
 
@@ -49,7 +60,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                 <span class="bar"></span>
             </div>
 
-                <a href="index.html"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
+                <a href="index.php"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
             
 
                 <div class="nav-menu">
@@ -73,7 +84,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                 </div>
 
                 <div class="contact-tablet">
-                    <a href="index.html" class="nav-link">CONTACT ME</a>
+                    <a href="index.php" class="nav-link">CONTACT ME</a>
                 </div>
         </nav>
 
@@ -133,25 +144,14 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
 
                         echo '<div class="project-card">
                         <div class="project-card-image"><img src="images/'.$row2['image_main'].'" alt="'.$row2['alt_text'].'"></div>
-                        <div class="project-card-tools">
-                            <p class="tool">HTML</p>
-                            <p class="tool">CSS</p>
-                            <p class="tool">JavaScript</p>
-                        </div>
                         <div class="project-card-name">'.$row2['title'].'</div>
                         <div class="project-card-buttons">
-                            <div class="white-button"><a href="'.$row2['project_url'].'">VIEW PROJECT</a></div>
                             <div class="black-button"><a href="cs-webdev.php?id='.$row2['project'].'">VIEW DETAILS</a></div>
                         </div>
                     </div>';
                     } elseif ($row2['categories_id'] == 2) {
                         echo '<div class="project-card">
                             <div class="project-card-image"><img src="images/'.$row2['image_main'].'" alt="'.$row2['alt_text'].'"></div>
-                            <div class="project-card-tools">
-                              <p class="tool">After Effects</p>
-                              <p class="tool">Cinema 4D</p>
-                              <p class="tool">Blender</p>
-                            </div>
                             <h2 class="project-card-name">'.$row2['title'].'</h2>
                             <div class="project-card-buttons">
                               <div class="black-button"><a href="cs-motion.php?id='.$row2['project'].'">VIEW DETAILS</a></div>

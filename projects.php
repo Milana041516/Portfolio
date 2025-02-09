@@ -3,13 +3,25 @@
     <?php
     require_once('includes/connect.php');
 
-    $query1 = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 1';
+    $stmt1 = $connect->prepare('SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 1');
 
-    $result1 = mysqli_query($connect,$query1);
+    $stmt2 = $connect->prepare('SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 2');
 
-    $query2 = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 2';
+    $stmt3 = $connect->prepare('SELECT * FROM testimonials');
 
-    $result2 = mysqli_query($connect,$query2);
+    $stmt1->execute();
+    $stmt2->execute();
+    $stmt3->execute();
+
+
+    //MYSqli
+    // $query1 = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 1';
+
+    // $result1 = mysqli_query($connect,$query1);
+
+    // $query2 = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main, overview FROM projects, media WHERE media.projects_id = projects.id AND projects.categories_id = 2';
+
+    // $result2 = mysqli_query($connect,$query2);
 
     ?>
 
@@ -43,7 +55,7 @@
                 <span class="bar"></span>
             </div>
 
-            <a href="index.html"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
+            <a href="index.php"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
             
 
                 <div class="nav-menu">
@@ -97,7 +109,7 @@
 
             <?php 
 
-            while($row1 = mysqli_fetch_array($result1)) {
+            while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {
 
             echo '<div class="projects-project col-span-full">
                 <div class="project-image">
@@ -111,18 +123,18 @@
                         <p class="tool">JavaScript</p>
                     </div>
                     <p class="project-mini-description">'.$row1['overview'].'</p>
-                    <div class="project-card-buttons">
                         <div class="white-button"><a href="cs-webdev.php?id='.$row1['project'].'">VIEW PROJECT</a></div>
-                        <div class="black-button"><a href="cs-webdev.php?id='.$row1['project'].'">VIEW DETAILS</a></div>
-                    </div>
                 </div>
             </div>';
         }
 
+$stmt = null;
+
+
             ?>
 
 <?php
-while($row2 = mysqli_fetch_array($result2)) {
+while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
 
     echo '
             <div class="projects-project col-span-full">
@@ -137,10 +149,12 @@ while($row2 = mysqli_fetch_array($result2)) {
                         <p class="tool">After Effects</p>
                     </div>
                     <p class="project-mini-description">'.$row2['overview'].'</p>
-                    <div class="black-button"><a href="cs-motion.php?id='.$row2['project'].'">VIEW DETAILS</a></div>
+                    <div class="white-button"><a href="cs-motion.php?id='.$row2['project'].'">VIEW PROJECT</a></div>
                 </div>
             </div>';
 }
+
+$stmt2 = null;
 ?>
         </section>
 
@@ -149,35 +163,18 @@ while($row2 = mysqli_fetch_array($result2)) {
             <div class="col-span-full heading"><p>TESTIMONIALS</p></div>
 
             <div class="col-span-full testimonial-container">
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
 
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
+            <?php 
+            while ($row3 = $stmt3->fetch(PDO::FETCH_ASSOC)) {
+              echo' <div class="testimonial">
+                    <p class="testimonial-text">'.$row3['comment'].'</p>
+                    <p class="testimonial-name"'.$row3['fullname'].'</p>
+                    <p class="testimonial-occupation">'.$row3['occupation'].'</p>
+                </div>';
+            }
 
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
-
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
+            $stmt3 = null;
+                ?>
             </div>
 
 

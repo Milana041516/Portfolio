@@ -1,7 +1,7 @@
 .white-button {
     background-color: white; 
     color: #09060C;
-    width: 145px;
+    width: 100%;
     height: 40px;
     padding: 10px 10px;
     border-radius: 20px;
@@ -86,7 +86,7 @@
 
 @media screen and (min-width: 768px) {
     .white-button {
-        width: 95px;
+        width: 100%;
         height: 30px;
         padding: 8px 0px;
         border-radius: 20px;
@@ -104,7 +104,7 @@
 
 @media screen and (min-width: 1200px) {
     .white-button {
-        width: 145px;
+        width: 100%;
         height: 35px;
         padding: 10px 0px;
         font-size: 13px;

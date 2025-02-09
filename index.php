@@ -5,9 +5,17 @@
 
 require_once('includes/connect.php');
 
-$query = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main FROM projects, media WHERE media.projects_id = projects.id LIMIT 3';
+$stmt1 = $connect->prepare('SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main FROM projects, media WHERE media.projects_id = projects.id LIMIT 3');
 
-$results = mysqli_query($connect, $query);
+$stmt2 = $connect->prepare('SELECT * FROM testimonials');
+
+$stmt1->execute();
+$stmt2->execute();
+
+//OLD MYSql
+// $query = 'SELECT projects.id AS project, title, tools_used, project_url, url, alt_text, image_main FROM projects, media WHERE media.projects_id = projects.id LIMIT 3';
+
+// $results = mysqli_query($connect, $query);
 ?>
 
 <head>
@@ -40,7 +48,7 @@ $results = mysqli_query($connect, $query);
                 <span class="bar"></span>
             </div>
 
-                <a href="index.html"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
+                <a href="index.php"><img class="logo-tablet" src="images/logo-mobile.svg" alt="logo"></a>
             
 
                 <div class="nav-menu">
@@ -117,23 +125,19 @@ $results = mysqli_query($connect, $query);
             <div class="col-span-full project-cards">
             <?php
 
-            while($row = mysqli_fetch_array($results)) {
+            while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {
                 
             
            echo '<div class="project-card card-gsap">
-                <div class="project-card-image"><img src="images/'.$row['image_main'].'" alt="'.$row['alt_text'].'"></div>
-                <div class="project-card-tools">
-                    <p class="tool">HTML</p>
-                    <p class="tool">CSS</p>
-                    <p class="tool">JavaScript</p>
-                </div>
-                <div class="project-card-name">'.$row['title'].'</div>
+                <div class="project-card-image"><img src="images/'.$row1['image_main'].'" alt="'.$row1['alt_text'].'"></div>
+                <div class="project-card-name">'.$row1['title'].'</div>
                 <div class="project-card-buttons">
-                    <div class="white-button"><a href="'.$row['project_url'].'">VIEW PROJECT</a></div>
-                    <div class="black-button"><a href="cs-webdev.php?id='.$row['project'].'">VIEW DETAILS</a></div>
+                    <div class="white-button"><a href="cs-webdev.php?id='.$row1['project'].'">VIEW DETAILS</a></div>
                 </div>
             </div>';
             }
+
+            $stmt1 = null;
             ?>
         </div>
 
@@ -148,35 +152,16 @@ $results = mysqli_query($connect, $query);
             <div class="col-span-full heading"><p>TESTIMONIALS</p></div>
 
             <div class="col-span-full testimonial-container">
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
 
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
-
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
-
-                <div class="testimonial">
-                    <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                    <p class="testimonial-name">NAME SURNAME </p>
-                    <p class="testimonial-occupation">OCCUPATION</p>
-                </div>
+            <?php 
+            while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+                echo '<div class="testimonial">
+                    <p class="testimonial-text">'.$row2['comment'].'</p>
+                    <p class="testimonial-name">'.$row2['fullname'].'</p>
+                    <p class="testimonial-occupation">'.$row2['occupation'].'</p>
+                </div>';
+            }
+                ?>
             </div>
 
 
@@ -201,7 +186,7 @@ $results = mysqli_query($connect, $query);
 
                 <div class="email">
                     <img src="images/mail-icon.svg" alt="mail-icon">
-                    <p class="purple-text-pe">&lt;milana15.10.05@gmail.com&gt;</p>
+                    <p class="purple-text-pe">&lt;milanagabbassova@gmail.com&gt;</p>
                 </div>
             </div>
 
