@@ -6,11 +6,11 @@ Welcome to my portfolio! This project showcases my work as a **Frontend Develope
 
 
 ## 🚀 Features  
-✔ **Smooth GSAP Animations** – Interactive transitions and animations for an engaging user experience.  
-✔ **Fully Responsive Design** – Optimized for different screen sizes, ensuring accessibility across devices.  
-✔ **Custom Styling with SASS** – Modular SCSS styles for maintainability and scalability.  
-✔ **Backend with PHP & MySQL** – Dynamic content management using a database-driven approach.  
-✔ **Project Showcase** – Displays my frontend and 3D projects in a visually appealing format.  
+✔ **Smooth GSAP Animations** - Interactive transitions and animations for an engaging user experience.  
+✔ **Fully Responsive Design** - Optimized for different screen sizes, ensuring accessibility across devices.  
+✔ **Custom Styling with SASS** - Modular SCSS styles for maintainability and scalability.  
+✔ **Backend with PHP & MySQL** - Dynamic content management using a database-driven approach.  
+✔ **Project Showcase** - Displays my frontend and 3D projects in a visually appealing format.  
 
 ## 🛠 Technologies Used  
 - **Frontend:** HTML, SASS (SCSS), GSAP  
@@ -22,7 +22,7 @@ Welcome to my portfolio! This project showcases my work as a **Frontend Develope
 💼 **LinkedIn:** [linkedin.com/MilanaGabbassova](https://linkedin.com/in/milana-gabbassova-148842345)  
 📁 **GitHub:** [github.com/MilanaGabbassova](https://github.com/Milana041516)  
 
-If you’d like to connect, collaborate, or discuss potential projects, feel free to reach out! 🚀
+If you'd like to connect, collaborate, or discuss potential projects, feel free to reach out! 🚀
 
 ## Installation
 This is no installatin required, but should be opened with live server.
@@ -46,4 +46,4 @@ Milana Gabbassova
 
 
 ## License
-MIT License
+MIT License
