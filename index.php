@@ -191,17 +191,16 @@ $stmt2->execute();
             </div>
 
         <div class="form-contact col-span-full l-col-start-6 l-col-end-13">
-            <form method="post" action="sendmail.php" class="col-span-full order-form-inputs">
+            <form method="POST" action="sendmail.php" class="col-span-full contact-form order-form-inputs">
                 <input type="text" name="fname" placeholder="First name" id="fname">
                 <input type="text" name="lname" placeholder="Last name" id="lname">
                 <input type="text" name="email" placeholder="Email" id="email">
                 <textarea name="message" placeholder="Message" id="message"></textarea>
                 <button type="submit" class="submit-button" id="submit-action">SUBMIT</button>
+                <section id="feedback"><p>*Please fill out all required sections</p></section>
             </form>
 
             <div class="col-span-full button-social">
-                
-
                 <div class="social-medias">
                     <img src="images/instagram.svg" alt="instagram">
                     <img src="images/github.svg" alt="github">
