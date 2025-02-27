@@ -1,6 +1,12 @@
 <?php
+header("Content-Type: application/json; charset=UTF-8");
+ob_start();
 
 require_once('includes/connect.php');
+
+// error_reporting(0);
+// ini_set('display_errors', 0);
+
 
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
@@ -30,7 +36,6 @@ if(empty($email)) {
 }
 
 if (empty($errors)) {
-    try {
         $query = "INSERT INTO contact (fname, lname, email, message) VALUES (?,?,?,?)";
         $stmt = $connect->prepare($query);
         $stmt->bindParam(1, $fname, PDO::PARAM_STR);
@@ -47,17 +52,25 @@ if (empty($errors)) {
             $message = $msg;
             
             mail($to, $subject, $message);
-            header('Location: thank_you.php');
-            exit();
-        } else {
-            echo "Database insertion failed!";
+            // header('Location: thank_you.php');
+            // exit();
+            ob_end_clean(); 
+            echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
+         } 
+        // else {
+        //     ob_end_clean(); 
+        //     echo json_encode(array("errors" => array("Database insertion failed!")));
+        // }
+        $stmt = null;
+    } else {
+        // foreach($errors as $error) {
+        //     echo $error.'<br>';
+        // }
+        ob_end_clean(); 
+        $errmsg = array();
+        foreach($errors as $key => $value) {
+            $errmsg[] = $value;
         }
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        echo json_encode(array("errors" => $errmsg));
     }
-} else {
-    foreach ($errors as $error) {
-        echo $error . '<br>';
-    }
-}
 ?>

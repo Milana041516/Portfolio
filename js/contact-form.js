@@ -1,19 +1,17 @@
 export const contactForm = () => {
 const form = document.querySelector(".contact-form");
 const feedback = document.querySelector("#feedback");
-const submitBtn = document.querySelector("#submit-action");
+// const submitBtn = document.querySelector("#submit-action");
 
 function regForm(event) {
     event.preventDefault();
-
-    const thisForm = event.currentTarget;
     const url = "sendmail.php";
-
+    const thisForm = event.currentTarget;
     const formdata = 
     "fname=" +thisForm.elements.fname.value+
-    "&lname="+thisForm.elements.lname.value+
-    "&email="+thisForm.elements.email.value+
-    "&msg="+thisForm.elements.msg.value;
+    "&lname=" +thisForm.elements.lname.value+
+    "&email=" +thisForm.elements.email.value+
+    "&message=" +thisForm.elements.message.value;
 
     console.log(formdata);
 
@@ -33,7 +31,7 @@ function regForm(event) {
                 const errorElement = document.createElement("p");
                 errorElement.textContent = error;
                 feedback.appendChild(errorElement);
-            })
+            });
         } else {
             form.reset();
             const messageElement = document.createElement("p");

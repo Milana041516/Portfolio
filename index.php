@@ -100,7 +100,7 @@ $stmt2->execute();
 
         <section class="grid-con section-about">
             <h2 class="hidden">About Me</h2>
-            <div class="h-background-about"><img src="images/tape2.svg" alt="background-about"></div>
+            <!-- <div class="h-background-about"><img src="images/tape2.svg" alt="background-about"></div> -->
             <div class="col-span-full heading"><p>ABOUT ME</p></div>
 
             <div class="facts-about col-span-full m-col-start-1 m-col-end-8 content-gsap-left">
@@ -117,7 +117,7 @@ $stmt2->execute();
 
         <section class="grid-con section-projects">
             <h2 class="hidden">Projects</h2>
-            <div class="h-background-projects"><img src="images/ball.svg" alt="background-projects"></div>
+            <!-- <div class="h-background-projects"><img src="images/ball.svg" alt="background-projects"></div> -->
             <div class="col-span-full heading h-projects-background"><p>PROJECTS</p></div>
 
             <!--web dev-->
@@ -147,8 +147,7 @@ $stmt2->execute();
 
         <section class="grid-con section-testimonials">
             <h2 class="hidden">Testimonials</h2>
-            <div class="h-background-testimonials">
-                <img src="images/tape1.svg" alt="background-testimonials"></div>
+            <!-- <div class="h-background-testimonials"><img src="images/tape1.svg" alt="background-testimonials"></div> -->
             <div class="col-span-full heading"><p>TESTIMONIALS</p></div>
 
             <div class="col-span-full testimonial-container">
@@ -170,7 +169,7 @@ $stmt2->execute();
 
         <section id="contact" class="grid-con section-contact">
             <h2 class="hidden">Contact me</h2>
-            <div class="h-background-contact"><img src="images/tape2.svg" alt="background-contact"></div>
+            <!-- <div class="h-background-contact"><img src="images/tape2.svg" alt="background-contact"></div> -->
             <div class="col-span-full heading"><p>CONTACT ME</p></div>
 
             <div class="text-contact col-span-full l-col-start-1 l-col-end-6">
