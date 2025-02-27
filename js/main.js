@@ -9,4 +9,4 @@ initializeVideoPlayer();
 initializeHamburgerMenu();
 initializeGSAPAnimations();
 initializeSlider();
-// contactForm();
+contactForm(); 
