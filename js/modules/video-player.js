@@ -1,4 +1,4 @@
 //video
-export const initializeVideoPlayer = () => {
+export function videoPlayer() {
     const player = new Plyr('video');
 };

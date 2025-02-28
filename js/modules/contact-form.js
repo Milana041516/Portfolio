@@ -1,4 +1,4 @@
-export const contactForm = () => {
+export function contactForm() {
 const form = document.querySelector(".contact-form");
 const feedback = document.querySelector("#feedback");
 // const submitBtn = document.querySelector("#submit-action");
