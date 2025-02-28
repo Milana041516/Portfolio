@@ -1,11 +1,7 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
-ob_start();
 
 require_once('includes/connect.php');
-
-// error_reporting(0);
-// ini_set('display_errors', 0);
 
 
 $fname = $_POST['fname'];
@@ -42,31 +38,10 @@ if (empty($errors)) {
         $stmt->bindParam(2, $lname, PDO::PARAM_STR);
         $stmt->bindParam(3, $email, PDO::PARAM_STR);
         $stmt->bindParam(4, $msg, PDO::PARAM_STR);
-        
-        if ($stmt->execute()) {
-            $to = 'm_gabbassova@fanshaweonline.ca';
-            $subject = 'Message from your Portfolio Website!';
-            $message = "You have received a new contact form submission:\n\n";
-            $message .= "Name: " . $fname . " " . $lname . "\n";
-            $message .= "Email: " . $email . "\n\n";
-            $message = $msg;
-            
-            mail($to, $subject, $message);
-            // header('Location: thank_you.php');
-            // exit();
-            // ob_end_clean(); 
-            echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
-         } 
-        // else {
-        //     ob_end_clean(); 
-        //     echo json_encode(array("errors" => array("Database insertion failed!")));
-        // }
+
+        echo json_encode(["message" => "Form submitted successfully!", "redirect" => "thank_you.php"]);
         $stmt = null;
     } else {
-        // foreach($errors as $error) {
-        //     echo $error.'<br>';
-        // }
-        // ob_end_clean(); 
         $errmsg = array();
         foreach($errors as $key => $value) {
             $errmsg[] = $value;
