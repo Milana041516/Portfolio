@@ -33,10 +33,14 @@ function regForm(event) {
                 feedback.appendChild(errorElement);
             });
         } else {
+            if (response.redirect) {
+                window.location.href = response.redirect;
+            } else {
             form.reset();
             const messageElement = document.createElement("p");
             messageElement.textContent = response.message;
             feedback.appendChild(messageElement);
+            }
         }
         feedback.scrollIntoView({behavior: 'smooth', block: 'end'});
     })
