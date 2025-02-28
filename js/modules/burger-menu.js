@@ -1,6 +1,6 @@
 //burger-con
 
-export const initializeHamburgerMenu = () => {
+export function burgerCon () {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 

@@ -54,7 +54,7 @@ if (empty($errors)) {
             mail($to, $subject, $message);
             // header('Location: thank_you.php');
             // exit();
-            ob_end_clean(); 
+            // ob_end_clean(); 
             echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
          } 
         // else {
@@ -66,7 +66,7 @@ if (empty($errors)) {
         // foreach($errors as $error) {
         //     echo $error.'<br>';
         // }
-        ob_end_clean(); 
+        // ob_end_clean(); 
         $errmsg = array();
         foreach($errors as $key => $value) {
             $errmsg[] = $value;

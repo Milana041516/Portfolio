@@ -1,4 +1,4 @@
-export const initializeSlider = () => {
+export function slider() {
 
 //slider 
 const container = document.querySelector('#carousel-container');
