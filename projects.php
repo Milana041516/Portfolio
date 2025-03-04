@@ -99,17 +99,17 @@
 
         <section class="grid-con projects-section-projectcards">
             <h2 class="hidden">Project Cards</h2>
-            <!-- <div class="filter-buttons col-span-full">
-                <p class="filter-button">All</p>
-                <p class="filter-button">Web Development</p>
-                <p class="filter-button">3D Motion Design</p>
-            </div> -->
+            <div class="filter-buttons col-span-full">
+                <p class="filter-button" data-category="all">All</p>
+                <p class="filter-button" data-category="web-dev">Web Development</p>
+                <p class="filter-button" data-category="motion-design">3D Motion Design</p>
+            </div>
 
             <?php 
 
             while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {
 
-            echo '<div class="projects-project col-span-full">
+            echo '<div class="projects-project col-span-full" data-category="web-dev">
                 <div class="project-image">
                     <img src="images/'.$row1['image_main'].'" alt="Zima-website">
                 </div>
@@ -135,7 +135,7 @@ $stmt = null;
 while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
 
     echo '
-            <div class="projects-project col-span-full">
+            <div class="projects-project col-span-full" data-category="motion-design">
                 <div class="project-image">
                     <img src="images/'.$row2['image_main'].'" alt="Lovebeats">
                 </div>
