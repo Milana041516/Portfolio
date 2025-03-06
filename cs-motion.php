@@ -177,7 +177,7 @@ $stmt2 = null;
     
     <footer class="grid-con section-footer">
         <h2 class="hidden">Footer</h2>
-        <div class="col-span-full logo-footer"><img src="images/logo-mobile.svg" alt="logo-footer"></div>
+        <div class="col-span-full logo-footer"><a href="index.php"><img src="images/logo-mobile.svg" alt="logo-footer"></a></div>
         <div class="col-span-full nav-menu-footer">
             <ul>
                 <li class="nav-item-footer">
@@ -198,15 +198,14 @@ $stmt2 = null;
 
 
             <div class="social-medias-footer">
-                <img src="images/instagram.svg" alt="instagram">
-                <img src="images/github.svg" alt="github">
-                <img src="images/linkedin.svg" alt="linkedin">
-                <img src="images/behance.svg" alt="behance">
+                <a href="#"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="https://github.com/Milana041516"><img src="images/github.svg" alt="github"></a>
+                <a href="https://www.linkedin.com/in/milana-gabbassova/"><img src="images/linkedin.svg" alt="linkedin"></a>
             </div>
 
         </div>
 
-            <div class="col-span-full"><p class="copyright-text">© 2024 Milana Gabbassova</p></div>
+            <div class="col-span-full"><p class="copyright-text">© 2025 Milana Gabbassova</p></div>
      </footer>
 </body>
 

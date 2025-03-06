@@ -110,4 +110,17 @@ gsap.from('.info-about', {
       markers: false
     }
   });
+
+  gsap.from('.info-resume', {
+    opacity: 0,
+    y: 100, 
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.info-resume',
+      start: "top 80%",
+      end: "bottom top",
+      toggleActions: "play none none reverse",
+      markers: false
+    }
+  });
 }
