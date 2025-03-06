@@ -157,6 +157,22 @@
             font-size: 27px;
         }
     }
+
+    .info-resume {
+        backdrop-filter: blur(20px);
+        background: radial-gradient(45% 38% at 26% 57%, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.20) 80.39%);
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 20px 25px;
+        margin-bottom: 30px;
+        text-align: center;
+
+        .big-text-about{
+            text-align: center;
+            font-size: 27px;
+            text-decoration: none;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) {
