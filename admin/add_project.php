@@ -45,12 +45,14 @@ if(move_uploaded_file($_FILES['img-main']['tmp_name'], $target_file)) {
 
     $stmt = null;
 
-    $mediaquery = "INSERT INTO media (projects_id, type, image_main) VALUES (?, ?, ?)";
+    $mediaquery = "INSERT INTO media (projects_id, type, image_main, image_gallery) VALUES (?, ?, ?, ?)";
 
     $stmt2 = $connect->prepare($mediaquery);
     $stmt2->bindParam(1, $last_id, PDO::PARAM_INT);
     $stmt2->bindParam(2, $_POST['type'], PDO::PARAM_STR);
     $stmt2->bindParam(3, $newname, PDO::PARAM_STR);
+    $stmt2->bindParam(4, $newname, PDO::PARAM_STR);
+
 
     $stmt2->execute();
 
