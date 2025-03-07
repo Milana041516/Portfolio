@@ -40,14 +40,14 @@ if (empty($errors)) {
         $stmt->bindParam(4, $msg, PDO::PARAM_STR);
 
         if($stmt->execute()) {
-        // $to = 'm_gabbassova@fanshaweonline.ca';
-        // $subject = 'Message from your Portfolio Website!';
+        $to = 'milanawe16@milanaweb.dev';
+        $subject = 'Message from your Portfolio Website!';
 
-        // $message = "You have received a new contact form submission:\n\n";
-        // $message .= "Name: ".$fname." ".$lname."\n";
-        // $message .= "Email ".$email."\n\n";
-        // $message .= $msg;
-        // mail($to,$subject,$message);
+        $message = "You have received a new contact form submission:\n\n";
+        $message .= "Name: ".$fname." ".$lname."\n";
+        $message .= "Email ".$email."\n\n";
+        $message .= $msg;
+        mail($to,$subject,$message);
 
         echo json_encode(["message" => "Form submitted successfully!", "redirect" => "thank_you.php"]);
         } 
