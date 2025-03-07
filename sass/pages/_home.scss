@@ -181,8 +181,14 @@ section {
     }
 
     .social-medias img {
-        width: 45px;
+        width: 40px;
         cursor: pointer;
+        margin-left: 20px;
+        transition: transform 0.3s ease-in-out; 
+
+        &:hover {
+            transform: scale(1.2); 
+        }
     }
 
     .phone-email-contact div {
@@ -345,10 +351,6 @@ section {
 
         .phone, .email {
             align-items: center;
-        }
-      
-        .social-medias img {
-            width: 55px;
         }
     
     }
