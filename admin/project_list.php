@@ -25,13 +25,15 @@ $stmt->execute();
 
     <section class="projects-list-container">
         <h1 class="hidden">Portfolio Project List</h1>
-        <h2>My Current Projects</h2>
+       
 
+        <div class="current-projects-container">
+        <h2>My Current Projects</h2>
         <?php
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         echo '<div class="projects-list">
-            <p class="project-list-title">'.$row['title'].'</p>
+            <p class="project-list-title">&lt;'.$row['title'].'&gt;</p>
             <a class="project-list-edit-btn" href="edit_project_form.php?id='.$row['id'].'">Edit Project</a>
             <a class="project-list-delete-btn" href="delete_project.php?id='.$row['id'].'">Delete Project</a>
         </div>';
@@ -39,7 +41,7 @@ $stmt->execute();
 
         $stmt = null;
         ?>
-
+</div>
         <div class="projects-list-form">
         <h2>This space looks lonely… Add a project!</h2>
 
@@ -80,14 +82,14 @@ $stmt->execute();
 
                 
                 
-                <input name="submit" type="submit" value="Add">
+                <input name="submit" type="submit" value="Add" class="add-btn">
             </form>
 
-            <a href="logout.php">Log Out</a>
 
         </div>
 
     </section>
+    <a href="logout.php" class="logout-btn">Log Out</a>
     
 </body>
 </html>

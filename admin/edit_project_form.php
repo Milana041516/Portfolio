@@ -69,16 +69,15 @@ $mediaRow = $mediaStmt->fetch(PDO::FETCH_ASSOC);
                 <label for="categories_id">Project category: </label>
                 <input name="categories_id" type="text" value="<?php echo $row['categories_id']?>" required><br><br>
 
-                <input name="submit" type="submit" value="Edit">
+                <input name="submit" type="submit" value="Edit" class="edit-btn">
             </form>
 
             <?php
             $stmt = null;
             ?>
-
-            <a href="logout.php">Log Out</a>
-
         </div>
     
+        <a href="logout.php" class="logout-btn">Log Out</a>
+
 </body>
 </html>

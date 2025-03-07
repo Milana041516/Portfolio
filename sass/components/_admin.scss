@@ -12,7 +12,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: white;
     border-radius: 10px;
-    padding: 30px 40px;
+    padding: 30px 45px;
 
     h1 {
         font-size: 36px;
@@ -64,4 +64,140 @@
         color: #333;
         font-weight: 600;
     }
+}
+
+.logout-btn {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none; 
+    padding: 15px;
+    width: 300px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.projects-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 20px;
+
+   .current-projects-container, .projects-list-form {
+    width: 80vw;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+   }
+
+   .projects-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+   }
+
+   .project-list-title {
+    font-size: 20px;
+   }
+
+.project-list-edit-btn {
+    color: #cccccc; 
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.project-list-edit-btn:hover {
+    color: #ffffff; 
+}
+
+.project-list-delete-btn {
+    color: #ff5555; 
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.project-list-delete-btn:hover {
+    color: #ff7777; 
+}
+
+.add-btn {
+    background-color: #ffffff; 
+    color: #000000; 
+    border: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+    background-color: #cccccc; 
+    color: #000000;
+}
+
+.add-btn:active {
+    background-color: #aaaaaa; 
+}
+}
+
+.edit-list-form {
+    margin: 0 auto;
+    width: 40vw;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+   }
+
+   .edit-btn {
+    background-color: #ffffff; 
+    color: #000000; 
+    border: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit-btn:hover {
+    background-color: #cccccc; 
+    color: #000000;
+}
+
+.edit-btn:active {
+    background-color: #aaaaaa; 
+}
+
+@media screen and (min-width: 768px) {
+    .projects-list-container {
+       .current-projects-container, .projects-list-form {
+        width: 40vw;
+       }
+    }
+    
 }
