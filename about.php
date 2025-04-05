@@ -88,9 +88,9 @@
             <div class="info-socials col-span-full m-col-start-8 m-col-end-13 m-row-start-2 m-row-end-3">
                 <p class="big-text-about">&lt;Social Medias&gt;</p>
                 <div class="social-medias">
-                    <img src="images/instagram.svg" alt="instagram">
-                    <img src="images/github.svg" alt="github">
-                    <img src="images/linkedin.svg" alt="linkedin">
+                <a href="https://www.instagram.com/_.iammilana._/profilecard/?igsh=azA0bmh5M2ZjaG12"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="https://github.com/Milana041516"><img src="images/github.svg" alt="github"></a>
+                <a href="https://www.linkedin.com/in/milana-gabbassova/"><img src="images/linkedin.svg" alt="linkedin"></a>
                 </div>
             </div>
 
@@ -160,7 +160,7 @@
             <div class="col-span-full button-social">
 
                 <div class="social-medias">
-                <a href="#"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="https://www.instagram.com/_.iammilana._/profilecard/?igsh=azA0bmh5M2ZjaG12"><img src="images/instagram.svg" alt="instagram"></a>
                 <a href="https://github.com/Milana041516"><img src="images/github.svg" alt="github"></a>
                 <a href="https://www.linkedin.com/in/milana-gabbassova/"><img src="images/linkedin.svg" alt="linkedin"></a>
                 </div>
@@ -197,7 +197,7 @@
             <div class="contact-scroll button-footer black-button"><a href="#contact">CONTACT ME</a></div>
 
             <div class="social-medias-footer">
-                <a href="#"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="https://www.instagram.com/_.iammilana._/profilecard/?igsh=azA0bmh5M2ZjaG12"><img src="images/instagram.svg" alt="instagram"></a>
                 <a href="https://github.com/Milana041516"><img src="images/github.svg" alt="github"></a>
                 <a href="https://www.linkedin.com/in/milana-gabbassova/"><img src="images/linkedin.svg" alt="linkedin"></a>
             </div>
